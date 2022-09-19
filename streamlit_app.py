@@ -29,7 +29,7 @@ my_data_row = my_cur.fetchall()
 streamlit.header("The fruit load list contains:")
 streamlit.dataframe(my_data_row)
 fruit_to_add = streamlit.text_input('What fruit would you like to add?')
-if st.button("submit"):
+if streamlit.button("submit"):
   streamlit.write('The user entered ', fruit_to_add)
   sql_insert = "INSERT INTO FRUIT_LOAD_LIST (FRUIT_NAME) VALUES (fruit_to_add)"
   my_cur.execute(sql)
